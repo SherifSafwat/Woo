@@ -1,0 +1,63 @@
+﻿@model Woo.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Change Password";
+}
+
+<h1>Change</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Change">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OldPassword" class="control-label"></label>
+                <input asp-for="OldPassword" class="form-control" />
+                <span asp-validation-for="OldPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewPassword" class="control-label"></label>
+                <input asp-for="NewPassword" class="form-control" />
+                <span asp-validation-for="NewPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewPassword" class="control-label"></label>
+                <input class="form-control" type="text" id="CNewPassword" name="CNewPassword" value="">
+                <span asp-validation-for="NewPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="button" value="Save" class="btn btn-primary btn_post" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Cancel</a>
+</div>
+
+
+
+@section Scripts {
+
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $(document).on('click', '.btn_post', function (e) {
+                if ($('#CNewPassword').val() == $('#NewPassword').val()) {
+                    this.form.submit();
+                }
+                else {
+                    alert("Not the same PassWord");
+                }
+            });
+        });
+
+
+    </script>
+}

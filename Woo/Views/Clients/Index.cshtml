@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewData["Title"] = "Client";
+}
+
+<h1>Client</h1>
+
+<form action="" method="get">
+
+<div id="map_canvas" style="width: 800px; height: 500px"></div>
+<div class="form-group">
+    <input id="Longitude" name="Longitude" class="form-control" hidden />
+    <input id="Latitude" name="Latitude" class="form-control" hidden />
+</div>
+
+<div class="form-group row justify-content-center">
+    <div class="text-center col-sm-10">
+        <button type="submit" class="btn btn-primary" style="width:auto" onclick="test1(0)">
+            test
+        </button>
+    </div>
+</div>
+
+<div class="form-group row justify-content-center">
+    <div class="text-center col-sm-10">
+        <button type="submit" class="btn btn-primary" style="width:auto" asp-action="ChangeLocation" asp-controller="Clients">
+            Change Location
+        </button>
+    </div>
+</div>
+
+<div class="form-group row justify-content-center">
+    <div class="text-center col-sm-10">
+        <button type="submit" class="btn btn-primary" style="width:auto" asp-action="SelectSeller" asp-controller="Clients">
+            Set Seller Order
+        </button>
+    </div>
+</div>
+
+<div class="form-group row justify-content-center">
+    <div class="text-center col-sm-10">
+        <button type="submit" class="btn btn-primary" style="width:auto" asp-action="order" asp-controller="Clients">
+            Set Order
+        </button>
+    </div>
+</div>
+
+<div class="form-group row justify-content-center">
+    <div class="text-center col-sm-10">
+        <button type="submit" class="btn btn-primary" style="width:auto" asp-action="item" asp-controller="Clients">
+            Search Item
+        </button>
+    </div>
+</div>
+
+<div class="form-group row justify-content-center">
+    <div class="text-center col-sm-10">
+        <button type="submit" class="btn btn-primary" style="width:auto" asp-action="seller" asp-controller="Clients">
+            Navigate Seller
+        </button>
+    </div>
+</div>
+
+</form>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<!--
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=true"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+-->
+
+<script type="text/javascript">
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(success);
+    } else {
+        alert("Geo Location is not supported on your current browser!");
+    }
+
+    function setme(position) {
+
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        var city = position.coords.locality;
+        var myLatlng = new google.maps.LatLng(lat, long);
+        var myOptions = {
+            center: myLatlng,
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        mymap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+        $('#Latitude').val(lat);
+        $('#Longitude').val(long);
+
+        var marker = new google.maps.Marker({
+            map: mymap,
+            position: myLatlng,
+            icon: '/assets/img/pin2.png',
+            title: 'Your are here'
+        });
+
+        marker.setMap(mymap);
+        var infowindow = new google.maps.InfoWindow({ content: "<b>Your are here</b><br/>" });
+        infowindow.open(mymap, marker);
+
+
+    }
+
+    function addList() {
+
+        //var map = new google.maps.Map(document.getElementById("map_canvas"));
+
+        google.maps.event.addListener(mymap, "click", function (e) {
+            var myMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(e.latLng.lat(), e.latLng.lng()), // Example Lat/Long
+                map: mymap, // references the map object you defined earlier
+                title: 'My custom Title', // a title that will appear on hover
+                icon: '/assets/img/pin2.png' // Optional Marker Icon to use
+            });
+
+            $('#Latitude').val(e.latLng.lat());
+            $('#Longitude').val(e.latLng.lng());
+
+        });
+
+    }
+
+    function addwarehouses() {
+
+        var markers = [{
+            "title": 'Havana',
+            "lat": '30.064169852866765',
+            "lng": '31.260919155610296',
+            "description": 'José Martí International Airport, Havana'
+        }
+            ,
+        {
+            "title": 'Tampa',
+            "lat": '30.063705580240992',
+            "lng": '31.262075187695714',
+            "description": 'Tampa International Airport, Tampa'
+        }];
+
+        for (i = 0; i < markers.length; i++) {
+            var data = markers[i]
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: mymap,
+                title: data.title
+            });
+        }
+
+    }
+
+    function success(position) {
+
+        //var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+        setme(position);
+        addList();
+        addwarehouses();
+
+    }
+
+    //$(document).on('click', '.btn_post', function (e) {
+    //    if ($('#Latitude').val().length === 0 ) {
+
+    //        $('#Latitude').val(e.latLng.lat());
+    //        $('#Longitude').val(e.latLng.lng());
+    //    }
+    //    else {
+    //        this.form.submit();
+    //    }
+    //});
+
+</script>
+

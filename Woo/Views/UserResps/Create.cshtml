@@ -1,0 +1,98 @@
+﻿@model Woo.Models.UserResp
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>UserResp</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserRespNum" class="control-label"></label>
+                <input asp-for="UserRespNum" class="form-control" />
+                <span asp-validation-for="UserRespNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RespId" class="control-label"></label>
+                <input asp-for="RespId" class="form-control" />
+                <span asp-validation-for="RespId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataComment" class="control-label"></label>
+                <input asp-for="DataComment" class="form-control" />
+                <span asp-validation-for="DataComment" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Enabled" /> @Html.DisplayNameFor(model => model.Enabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrantBy" class="control-label"></label>
+                <input asp-for="GrantBy" class="form-control" />
+                <span asp-validation-for="GrantBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrantFromDate" class="control-label"></label>
+                <input asp-for="GrantFromDate" class="form-control" />
+                <span asp-validation-for="GrantFromDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrantToDate" class="control-label"></label>
+                <input asp-for="GrantToDate" class="form-control" />
+                <span asp-validation-for="GrantToDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrantComment" class="control-label"></label>
+                <input asp-for="GrantComment" class="form-control" />
+                <span asp-validation-for="GrantComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedID" class="control-label"></label>
+                <input asp-for="CreatedID" class="form-control" />
+                <span asp-validation-for="CreatedID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatingDate" class="control-label"></label>
+                <input asp-for="UpdatingDate" class="form-control" />
+                <span asp-validation-for="UpdatingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedID" class="control-label"></label>
+                <input asp-for="UpdatedID" class="form-control" />
+                <span asp-validation-for="UpdatedID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SysComment" class="control-label"></label>
+                <input asp-for="SysComment" class="form-control" />
+                <span asp-validation-for="SysComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

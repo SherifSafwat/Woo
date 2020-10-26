@@ -1,0 +1,60 @@
+﻿@using Woo.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Lang
+
+@model Woo.Models.Receive
+@{
+    ViewData["Title"] = @Lang["Create"] + " " + @Lang["Receives"];
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WarehouseObj.EName" class="control-label"></label>
+                <select asp-for="WarehouseId" class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.wharehouselist,"WareHouseId", "EName"))">
+                </select>
+                <span asp-validation-for="WarehouseId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemObj.EName" class="control-label"></label>
+                <select asp-for="ItemId" class="form-control"
+                        asp-items="@(new SelectList(@ViewBag.itemlist,"ItemId", "EName"))">
+                </select>
+                <span asp-validation-for="ItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnteringDate" class="control-label"></label>
+                <input asp-for="EnteringDate" class="form-control" />
+                <span asp-validation-for="EnteringDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiptNum" class="control-label"></label>
+                <input asp-for="ReceiptNum" class="form-control" />
+                <span asp-validation-for="ReceiptNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataComment" class="control-label"></label>
+                <input asp-for="DataComment" class="form-control" />
+                <span asp-validation-for="DataComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@Lang["Create"] class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Lang["BTL"] </a>
+</div>
+

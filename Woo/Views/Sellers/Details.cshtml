@@ -1,0 +1,187 @@
+﻿@using Woo.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Lang
+
+@model Woo.Models.Seller
+@{
+    ViewData["Title"] = @Lang["sellers"] +" "+ @Lang["details"];
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SellerNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SellerNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Enabled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Enabled)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantFromDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantFromDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantToDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantToDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantComment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdatingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatedID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdatedID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SysComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SysComment)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.SellerId">@Lang["edit"]</a> |*@
+    <a asp-action="Index">@Lang["thelist"]</a>
+</div>

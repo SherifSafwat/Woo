@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Woo.Models.Warehouse>
+@{
+    ViewData["Title"] = "WareHouses";
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <p class="h4 float-right">
+        <a asp-action="Create">New @ViewData["Title"]</a>
+    </p>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WarehouseNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SellerObj.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataComment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Longitude)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Latitude)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WarehouseNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SellerObj.EName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataComment)
+                </td>
+                <td class="col-sm-10">
+                    @Html.DisplayFor(model => item.Longitude)
+                </td>
+                <td class="col-sm-10">
+                    @Html.DisplayFor(model => item.Latitude)
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.WareHouseId">Edit</a> |*@
+                    <a asp-action="Details" asp-route-id="@item.WareHouseId">Details</a> |
+                    <a asp-action="SetLoction" asp-route-id="@item.WareHouseId">Set Location</a>
+                    @*<a asp-action="Delete" asp-route-id="@item.WareHouseId">Delete</a>*@
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

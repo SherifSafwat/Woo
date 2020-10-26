@@ -1,0 +1,115 @@
+﻿@model Woo.Models.Warehouse
+
+@{
+    ViewData["Title"] = "SetLoction";
+}
+
+<h1>SetLoction</h1>
+
+<h4>Warehouse</h4>
+<hr />
+
+
+<div class="row">
+
+
+    <div id="map_canvas" style="width: 800px; height: 500px"></div>
+
+    <div class="col-md-4">
+        <form asp-action="SetLoction">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WareHouseId" />
+            <div class="form-group">
+                <label asp-for="EName" class="control-label"></label>
+                <input asp-for="EName" class="form-control" />
+                <span asp-validation-for="EName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Longitude" class="form-control" />
+                <input asp-for="Latitude" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary btn_post" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back</a>
+</div>
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<!--
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=true"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+-->
+
+<script type="text/javascript">
+
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(success);
+} else {
+alert("Geo Location is not supported on your current browser!");
+}
+
+function success(position) {
+
+var lat = position.coords.latitude;
+var long = position.coords.longitude;
+var city=position.coords.locality;
+var myLatlng = new google.maps.LatLng(lat, long);
+var myOptions = {
+center: myLatlng,
+zoom: 16,
+mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+    $('#Latitude').val(lat);
+    $('#Longitude').val(long);
+
+    var marker = new google.maps.Marker({
+        map: map,
+    position: myLatlng,
+        icon: '/assets/img/pin2.png',
+title: "lat: " + lat + " long: " + long
+});
+
+marker.setMap(map);
+//var infowindow = new google.maps.InfoWindow({ content: "<b>Your Address</b><br/> Latitude:"+lat+"<br /> Longitude:"+long+"" });
+//infowindow.open(map, marker);
+
+
+google.maps.event.addListener(map, "click", function (e) {
+
+
+
+var myMarker = new google.maps.Marker({
+position: new google.maps.LatLng(e.latLng.lat(), e.latLng.lng()), // Example Lat/Long
+map: map, // references the map object you defined earlier
+title: 'My custom Title', // a title that will appear on hover
+    icon: '/assets/img/pin2.png' // Optional Marker Icon to use
+});
+
+    $('#Latitude').val(e.latLng.lat());
+    $('#Longitude').val(e.latLng.lng());
+
+});
+}
+
+    //$(document).on('click', '.btn_post', function (e) {
+    //    if ($('#Latitude').val().length === 0 ) {
+            
+    //        $('#Latitude').val(e.latLng.lat());
+    //        $('#Longitude').val(e.latLng.lng());
+    //    }
+    //    else {
+    //        this.form.submit();
+    //    }
+    //});
+
+</script>
+
+

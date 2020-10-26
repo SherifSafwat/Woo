@@ -1,0 +1,245 @@
+﻿@model IEnumerable<Woo.Models.ReportTail>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReportHeadId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header0)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header14)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header15)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header16)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header17)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header18)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header19)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantFromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantToDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SysComment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportHeadId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header0)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header16)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header17)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header18)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header19)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantFromDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantToDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SysComment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReportTailId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReportTailId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReportTailId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

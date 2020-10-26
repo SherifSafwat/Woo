@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Woo.Models.Device>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeviceNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Info5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SellerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantFromDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantToDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrantComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SysComment)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeviceNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Info5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SellerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Enabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantFromDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantToDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrantComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SysComment)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

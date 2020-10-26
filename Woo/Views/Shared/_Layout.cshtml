@@ -1,0 +1,333 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Woo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Template -->
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+
+    @*<input type="text" id="messageInput" name="messageInput" value="0" />*@
+
+    @if (ViewData["client"] == null)
+    {
+
+        @if (SignInManager.IsSignedIn(User))
+        {
+
+            <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand js-scroll-trigger" asp-controller="Home" asp-action="Index">Woo Shop</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" asp-controller="Clients" asp-action="Monitor"><span>Orders</span><span class="notification">3</span></a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" asp-controller="Account" asp-action="Logout">LogOut @User.Identity.Name</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" asp-controller="Params" asp-action="Edit">Setting</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" asp-controller="Account" asp-action="Change">Change Password</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" asp-controller="Home" asp-action="About">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        }
+        else
+        {
+            <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+                <div class="container">
+                    <a class="navbar-brand js-scroll-trigger" asp-controller="Home" asp-action="Index">Woo Shop</a><button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            @*<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" asp-controller="Account" asp-action="Login">LogIn</a></li>*@
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        }
+
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image<img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" /> Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Woo Shop</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Your Invoices - Your Customers - Your Data ... </p>
+            </div>
+        </header>
+
+    }
+    else
+    {
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image<img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" /> Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Woo Shop</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            </div>
+        </header>
+    }
+
+
+    <!-- Body Section -->
+    <div class="container">
+        <main role="main" class="pb-3">
+
+            <input type="text" id="messageInput" name="messageInput" value="0">
+
+            @RenderBody()
+        </main>
+    </div>
+
+
+    @*<footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2020 - Woo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>*@
+
+    <!-- Footer-->
+    <section class="copyright text-center text-white py-4" id="Footer">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">22 Shoubra<br />Cairo, MO 65243</p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Around the Web</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-facebook-f"></i></a><a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-twitter"></i></a><a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a><a class="btn btn-outline-light btn-social mx-1" href="#"><i class="fab fa-fw fa-dribbble"></i></a>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Woo Shop</h4>
+                    <p class="lead mb-0">Woo Shop is a free to use, <a href="http://widow2020-001-site1.itempurl.com/">Woo Comp.</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Section-->
+    <section class="copyright py-4 text-center text-white">
+        <div class="container">
+            <small>Copyright © Your Woo2020</small>
+            <p class="lead mb-0">Woo Shop is a free to use, <a href="http://widow2020-001-site1.itempurl.com/">Woo Comp.</a>.</p>
+            <p class="lead mb-0">&copy; 2020 - Woo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>.</p>
+        </div>
+    </section>
+
+    <!-- Scripts Section-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Template -->
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="~/assets/mail/jqBootstrapValidation.js"></script>
+    <script src="~/assets/mail/contact_me.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/js/scripts.js"></script>
+
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    @*<script src="~/js/chat.js"></script>*@
+
+
+
+<script>
+
+     function ajax_setConnctionId(p_id) {
+
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("ajax_setConnctionId")",
+            data: { id: p_id },
+            dataType: "json",
+            success: function (data) {
+                console.log("succ-ajax_setConnctionId: " + data);
+                return data;
+            },
+            error: function (req, status, error) {
+                console.log("error-ajax_setConnctionId: " + req + "-" + status + "-" + error);
+            }
+        });
+    }
+
+    //var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").withAutomaticReconnect().build();
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+
+    connection.start().then(
+        () => {
+
+            console.log("connected:" + connection.ConnectionId);
+            //ajax_setConnctionId(connection.ConnectionId);
+
+            @*var xx = '@ViewData["order"]';
+            if (xx) {
+
+                connection.invoke("SendMessage", "user", "message").catch(function (err) {
+                    return console.error("t1: " + err.toString());
+                });
+
+                connection.invoke("SendPrivateMessage", connection, "connection").catch(function (err) {
+                    return console.error("t112uconnection: " + err.toString());
+                });
+
+                connection.invoke("SendPrivateMessage", connection.toString(), "toString").catch(function (err) {
+                    return console.error("t112utoString: " + err.toString());
+                });
+
+                connection.invoke("SendPrivateMessage", connection.ConnectionId, "ConnectionId").catch(function (err) {
+                    return console.error("t112uConnectionId: " + err.toString());
+                });
+
+
+                connection.invoke("SendPrivateMessage", connection.ConnectionId.toString(), "ConnectionId.toString").catch(function (err) {
+                    return console.error("ConnectionId.toString: " + err.toString());
+                });
+
+                connection.invoke("SendPrivateMessage", "empty").catch(function (err) {
+                    return console.error("t112uEmpty: " + err.toString());
+                });
+
+            }*@
+
+        });
+
+    connection.on("ReceiveMessage", function (user, message) {
+
+        var i = Number($('#messageInput').val()) + 1;
+        $('#messageInput').val(i);
+        //console.log("on");
+        console.log("on" + user + message + "==" + connection.ConnectionId);
+
+    });
+
+
+    function test1(p_id) {
+
+
+        connection.invoke("SendMessage", "user", "message").catch(function (err) {
+            return console.error("t1: " + err.toString());
+        });
+
+        //connection.invoke("SendPrivateMessage", connection, "connection").catch(function (err) {
+        //    return console.error("t112uconnection: " + err.toString());
+        //});
+
+        //connection.invoke("SendPrivateMessage", connection.toString(), "toString").catch(function (err) {
+        //    return console.error("t112utoString: " + err.toString());
+        //});
+
+        connection.invoke("SendPrivateMessage", connection.connectionId, $('#messageInput').val()).catch(function (err) {
+            return console.error("t112uConnectionId2: " + err.toString()); 
+        });
+
+        //connection.invoke("SendPrivateMessage", connection.ConnectionId, messageInput.val).catch(function (err) {
+        //    return console.error("t112uConnectionId: " + err.toString());
+        //});
+
+
+        //connection.invoke("SendPrivateMessage", connection.ConnectionId.toString(), "ConnectionId.toString").catch(function (err) {
+        //    return console.error("ConnectionId.toString: " + err.toString());
+        //});
+
+        //connection.invoke("SendPrivateMessage", "empty").catch(function (err) {
+        //    return console.error("t112uEmpty: " + err.toString());
+        //});
+    }
+
+    @* async function start() {
+        try {
+            await connection.start();
+            console.assert(connection.state === signalR.HubConnectionState.Connected);
+            console.log("connected11");
+
+            var xx = '@ViewData["order"]';
+            if (xx) {
+                connection.invoke("SendMessage", "user", "message").catch(function (err) {
+                    return console.error("t1: " + err.toString());
+                });
+            }
+
+        } catch (err) {
+            console.assert(connection.state === signalR.HubConnectionState.Disconnected);
+            console.log(err);
+            setTimeout(() => start(), 5000);
+        }
+    };*@
+
+    @*var xx = '@ViewData["order"]';
+    if (xx) {
+
+        connection.invoke("SendMessage", "user", "message").catch(function (err) {
+            return console.error("t1: " + err.toString());
+        });
+    }*@
+
+        @*function onloadxx() {
+
+            var xx = '@ViewData["order"]';
+            if (xx) {
+
+                connection.invoke("SendMessage", "user", "message").catch(function (err) {
+                    return console.error("t22: " + err.toString());
+                });
+
+            }
+
+        };*@
+
+        //$(document).ready(function () {
+        //    var _linesno = 0;
+        //    onloadxx();
+
+        //});
+
+
+
+
+
+</script>
+
+
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html >

@@ -1,0 +1,156 @@
+﻿@model Woo.Models.Warehouse
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Warehouse</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WarehouseNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WarehouseNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataComment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Info1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Info2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Info3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Info4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Info5)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Info5)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SourceId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SourceId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Enabled)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Enabled)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantBy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantFromDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantFromDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantToDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantToDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrantComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrantComment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdatingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatedID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdatedID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SysComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SysComment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SysComment)
+        </dt>
+        <dd class="col-sm-10">
+            <a asp-controller="Warehouses" asp-action="SetLoction" asp-route-id="@Model.WareHouseId">Set Location</a>
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.WareHouseId">Edit</a> |*@
+    <a asp-action="Index">Back to List</a>
+</div>

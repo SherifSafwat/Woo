@@ -1,0 +1,36 @@
+﻿@model Woo.Models.ReportHead
+
+@{
+    ViewData["Title"] = "ReportLayout";
+}
+
+<h1>ReportLayout</h1>
+
+@*<table class="table">
+    <thead>
+        <tr>
+            @for (int i = 0; i < Int32.Parse(@Model.reportTs[0].labels[19]); i++)
+            {
+                <th>
+                    @Model.reportTs[0].labels[i];
+                </th>
+
+            }
+        </tr>
+    </thead>
+    <tbody>
+
+        @for (int i = 0; i < Int32.Parse(@Model.reportTs[0].labels[19]); i++)
+        {
+            @for (int j = 0; j < @Model.reportTs[0].data.Count; j++)
+            {
+                <tr>
+                    <td>
+                        @Model.reportTs[0].data[i][j];
+                    </td>
+                </tr>
+            }
+        }
+
+        </tbody>
+</table>*@

@@ -1,0 +1,58 @@
+﻿@model Woo.Models.Price
+@{
+    ViewData["Title"] = "Edit Price";
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PriceId" />
+            <input type="hidden" asp-for="CreatedId" />
+            <input type="hidden" asp-for="SellerId" />
+            <div class="form-group">
+                <label asp-for="PriceNum" class="control-label"></label>
+                <input asp-for="PriceNum" class="form-control" />
+                <span asp-validation-for="PriceNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemId" class="control-label"></label>
+                <input asp-for="ItemObj.EName" class="form-control" readonly />
+                <span asp-validation-for="ItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemPrice" class="control-label"></label>
+                <input asp-for="ItemPrice" class="form-control" />
+                <span asp-validation-for="ItemPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment1" class="control-label"></label>
+                <input asp-for="Comment1" class="form-control" />
+                <span asp-validation-for="Comment1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment2" class="control-label"></label>
+                <input asp-for="Comment2" class="form-control" />
+                <span asp-validation-for="Comment2" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Enabled" /> @Html.DisplayNameFor(model => model.Enabled)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

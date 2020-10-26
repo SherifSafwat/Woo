@@ -1,0 +1,57 @@
+﻿@using Woo.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Lang
+
+@model IEnumerable<Woo.Models.Item>
+@{
+    ViewData["Title"] = @Lang["Items"];
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <p class="h4 float-right">
+        <a asp-action="Create">@Lang["Create"]</a>
+    </p>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataComment)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataComment)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ItemId">@Lang["Details"]</a> |
+                        @*<a asp-action="Delete" asp-route-id="@item.ItemId">Delete</a>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

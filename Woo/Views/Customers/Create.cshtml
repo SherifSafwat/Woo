@@ -1,0 +1,74 @@
+﻿@using Woo.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Lang
+
+@model Woo.Models.Customer
+@{
+    ViewData["Title"] = @Lang["Create"] + " " + @Lang["Customers"];
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerNum" class="control-label"></label>
+                <input asp-for="CustomerNum" class="form-control" />
+                <span asp-validation-for="CustomerNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EName" class="control-label"></label>
+                <input asp-for="EName" class="form-control" />
+                <span asp-validation-for="EName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AName" class="control-label"></label>
+                <input asp-for="AName" class="form-control" />
+                <span asp-validation-for="AName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataComment" class="control-label"></label>
+                <input asp-for="DataComment" class="form-control" />
+                <span asp-validation-for="DataComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address1" class="control-label"></label>
+                <input asp-for="Address1" class="form-control" />
+                <span asp-validation-for="Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address2" class="control-label"></label>
+                <input asp-for="Address2" class="form-control" />
+                <span asp-validation-for="Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address3" class="control-label"></label>
+                <input asp-for="Address3" class="form-control" />
+                <span asp-validation-for="Address3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact1" class="control-label"></label>
+                <input asp-for="Contact1" class="form-control" />
+                <span asp-validation-for="Contact1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact2" class="control-label"></label>
+                <input asp-for="Contact2" class="form-control" />
+                <span asp-validation-for="Contact2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@Lang["Create"] class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@Lang["BTL"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

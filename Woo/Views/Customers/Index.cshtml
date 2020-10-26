@@ -1,0 +1,92 @@
+﻿@using Woo.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Lang
+
+@model IEnumerable<Woo.Models.Customer>
+@{
+    ViewData["Title"] = @Lang["Customers"];
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <p class="h4 float-right">
+        <a asp-action="Create">@Lang["Create"]</a>
+    </p>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th class="text-center">
+                    @Html.DisplayNameFor(model => model.CustomerNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataComment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address3)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contact1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contact2)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataComment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contact2)
+                    </td>
+
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.CustomerId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CustomerId">@Lang["Details"]</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,117 @@
+﻿@model Woo.Models.Customer
+@{
+    ViewData["Title"] = "Customer Details";
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataComment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataComment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address4)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address4)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contact3)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Contact3)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Comment1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Comment1)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SourceID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SourceID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreatedID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdatingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdatedID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdatedID)
+        </dd>
+    </dl>
+</div>
+<div>
+    @*<a asp-action="Edit" asp-route-id="@Model.CustomerId">Edit</a> |*@
+    <a asp-action="Index">Back to List</a>
+</div>

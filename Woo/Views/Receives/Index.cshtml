@@ -1,0 +1,74 @@
+﻿@using Woo.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Lang
+
+@model IEnumerable<Woo.Models.Receive>
+@{
+    ViewData["Title"] = @Lang["Receives"];
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <p class="h4 float-right">
+        <a asp-action="Create"> @Lang["Create"]</a>
+    </p>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WarehouseObj.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemObj.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Qty)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EnteringDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReceiptNum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataComment)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WarehouseObj.EName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ItemObj.EName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnteringDate)
+                </td>
+                <th>
+                    @Html.DisplayNameFor(model => item.ReceiptNum)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataComment)
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.ReceiveId">Edit</a> |*@
+                    <a asp-action="Details" asp-route-id="@item.ReceiveId"> @Lang["Details"]</a> |
+                    @*<a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

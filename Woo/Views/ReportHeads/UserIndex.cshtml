@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Woo.Models.ReportHead>
+@{
+    ViewData["Title"] = "Reports";
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <p class="h4 float-right">
+        <a asp-action="Create">New @ViewData["Title"]</a>
+    </p>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReportEName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReportAName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReportEDesc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReportADesc)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReportEName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReportAName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReportEDesc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReportADesc)
+                    </td>
+                    <td>
+                        <a asp-action="ReportParam" asp-route-id="@item.ReportHeadId">Run</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

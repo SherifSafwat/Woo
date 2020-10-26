@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Woo.Models.ApplicationUser>
+@{
+    ViewData["Title"] = "Users";
+}
+<p class="h2 text-center font-weight-bold pt-lg-5">@ViewData["Title"]</p>
+
+<div>
+    <p class="h4 float-right">
+        <a asp-action="Create">New @ViewData["Title"]</a>
+    </p>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SellerObj.EName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataComment)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SellerObj.EName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataComment)
+                </td>
+
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

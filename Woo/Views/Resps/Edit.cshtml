@@ -1,0 +1,74 @@
+﻿@model Woo.Models.Resp
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Resp</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="RespNum" class="control-label"></label>
+                <input asp-for="RespNum" class="form-control" />
+                <span asp-validation-for="RespNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EName" class="control-label"></label>
+                <input asp-for="EName" class="form-control" />
+                <span asp-validation-for="EName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AName" class="control-label"></label>
+                <input asp-for="AName" class="form-control" />
+                <span asp-validation-for="AName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataComment" class="control-label"></label>
+                <input asp-for="DataComment" class="form-control" />
+                <span asp-validation-for="DataComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedID" class="control-label"></label>
+                <input asp-for="CreatedID" class="form-control" />
+                <span asp-validation-for="CreatedID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatingDate" class="control-label"></label>
+                <input asp-for="UpdatingDate" class="form-control" />
+                <span asp-validation-for="UpdatingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedID" class="control-label"></label>
+                <input asp-for="UpdatedID" class="form-control" />
+                <span asp-validation-for="UpdatedID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SysComment" class="control-label"></label>
+                <input asp-for="SysComment" class="form-control" />
+                <span asp-validation-for="SysComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
